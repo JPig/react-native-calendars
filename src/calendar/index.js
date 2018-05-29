@@ -14,6 +14,7 @@ import UnitDay from './day/period';
 import MultiDotDay from './day/multi-dot';
 import MultiPeriodDay from './day/multi-period';
 import SingleDay from './day/custom';
+import Badge from './day/badge';
 import CalendarHeader from './header';
 import shouldComponentUpdate from './updater';
 
@@ -41,7 +42,7 @@ class Calendar extends Component {
     // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
     firstDay: PropTypes.number,
 
-    // Date marking style [simple/period/multi-dot/multi-period]. Default = 'simple' 
+    // Date marking style [simple/period/multi-dot/multi-period]. Default = 'simple'
     markingType: PropTypes.string,
 
     // Hide month navigation arrows. Default = false
@@ -207,6 +208,8 @@ class Calendar extends Component {
       return MultiPeriodDay;
     case 'custom':
       return SingleDay;
+    case 'badge':
+      return Badge;
     default:
       return Day;
     }

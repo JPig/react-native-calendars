@@ -44,7 +44,7 @@ class Day extends Component {
 
     const isDisabled = typeof marking.disabled !== 'undefined' ? marking.disabled : this.props.state === 'disabled';
 
-    if(isDisabled || !marking.showBadge) {
+    if(isDisabled || Object.keys(marking).length === 0) {
       return undefined;
     }
 

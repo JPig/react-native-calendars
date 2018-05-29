@@ -44,13 +44,13 @@ class Day extends Component {
 
     const isDisabled = typeof marking.disabled !== 'undefined' ? marking.disabled : this.props.state === 'disabled';
 
-    if(isDisabled) {
+    if(isDisabled || !marking.showBadge) {
       return undefined;
     }
 
     const badgeStyle = [this.style.badge];
     const badgeTextStyle = [this.style.badgeText];
-    const number = marking.count || '';
+    const number = marking.count;
 
     if(marking.badgeStyle) {
       badgeStyle.push(marking.badgeStyle);
